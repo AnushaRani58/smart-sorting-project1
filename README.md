@@ -1,0 +1,7 @@
+# Smart-Sorting-Transfer-learning-for-identifying-rotten-fruits-and-vegetablesThe Fruit Freshness Detection System is a deep learning-based web application designed to automatically classify fruits as fresh or rotten using image processing techniques. The main objective of this project is to reduce manual inspection effort and improve accuracy in fruit quality assessment through automation.
+
+The system is built using Python and leverages TensorFlow/Keras with MobileNetV2 (Transfer Learning) to perform image classification. Transfer learning is used to improve model performance by utilizing a pre-trained convolutional neural network and fine-tuning it on a fruit dataset. The model is trained and evaluated using metrics such as accuracy, confusion matrix, precision, recall, and F1-score to ensure reliable performance.
+
+The application is deployed using Flask, which acts as the backend framework, while HTML and CSS are used to design the user interface. Users can upload an image of a fruit through the web interface, and the system preprocesses the image (resizing and normalization) before passing it to the trained model. The model then predicts whether the fruit is fresh or rotten and displays the result along with a confidence score.
+
+The project demonstrates the practical application of deep learning in agriculture and food quality management. It is scalable, efficient, and can be extended to support additional fruit categories, real-time camera detection, and mobile deployment in the future.
