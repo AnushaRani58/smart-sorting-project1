@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Sorting - Fruit Freshness Detection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #56ab2f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3d8b1f;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .prediction {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .confidence {
+            font-size: 16px;
+            color: #555;
+        }
+
+        img {
+            margin-top: 15px;
+            width: 200px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Smart Sorting System</h1>
+        <p>Upload a fruit image to detect freshness</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <p class="prediction">Prediction: {{ prediction }}</p>
+                <p class="confidence">Confidence: {{ confidence | round(2) }}%</p>
+                <!-- <img src="{{ url_for('static', filename=request.files['file'].filename) }}"> -->
+                <img src="{{ url_for('static', filename=filename) }}">
+            </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
